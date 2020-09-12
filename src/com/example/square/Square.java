@@ -1,2 +1,5 @@
-package com.example.square;public class Square {
+package com.example.square;
+
+public class Square {
+
 }

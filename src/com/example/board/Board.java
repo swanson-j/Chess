@@ -1,2 +1,4 @@
-package com.example.board;public class Board {
+package com.example.board;
+
+public class Board {
 }
