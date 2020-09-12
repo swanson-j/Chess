@@ -1,2 +1,15 @@
-package com.example.piece;public class Bishop {
+package com.example.piece;
+
+import com.example.board.Board;
+import com.example.square.Square;
+
+public class Bishop extends Piece {
+    public Bishop(boolean isWhite, boolean isCaptured){
+        super(isWhite, isCaptured);
+    }
+
+    @Override
+    public boolean canMove(Board board, Square startSquare, Square endSquare) {
+        return false;
+    }
 }
