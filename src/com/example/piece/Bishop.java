@@ -10,6 +10,7 @@ public class Bishop extends Piece {
 
     @Override
     public boolean canMove(Board board, Square startSquare, Square endSquare) {
+        //TODO
         return false;
     }
 }
