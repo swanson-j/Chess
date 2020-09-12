@@ -1,2 +1,6 @@
-package com.example.piece;public class Piece {
+package com.example.piece;
+
+public abstract class Piece {
+
 }
+
