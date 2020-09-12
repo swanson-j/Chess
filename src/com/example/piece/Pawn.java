@@ -18,7 +18,9 @@ public class Pawn extends Piece {
         this.hasMoved = hasMoved;
     }
 
+    @Override
     public boolean canMove(Board board, Square startSquare, Square endSquare){
-
+        //TODO
+        return true;
     }
 }
