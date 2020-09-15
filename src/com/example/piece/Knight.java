@@ -10,7 +10,15 @@ public class Knight extends Piece{
 
     @Override
     public boolean canMove(Board board, Square startSquare, Square endSquare) {
-        //TODO
-        return false;
+
+        // the player cannot move to a square that also contains another of the same player's piece
+        if(endSquare.getPiece().isWhite() == this.isWhite())
+            return false;
+
+        int xMove = Math.abs(startSquare.getX() - endSquare.getX());
+        int yMove = Math.abs(startSquare.getY() - endSquare.getY());
+
+        return xMove * yMove == 2;
+
     }
 }
