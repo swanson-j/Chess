@@ -20,7 +20,42 @@ public class Pawn extends Piece {
 
     @Override
     public boolean canMove(Board board, Square startSquare, Square endSquare){
-        //TODO
-        return true;
+
+        // player cannot move to a square that also contains another of the same player's piece
+        if(endSquare.getPiece().isWhite() == this.isWhite()){
+            return false;
+        }
+
+        // player is moving pawn up or down the board without capturing
+        if(startSquare.getX() != endSquare.getX() && startSquare.getY() == endSquare.getY()){
+
+            // pawn can't move forward into another piece
+            if(endSquare.getPiece() != null){
+                return false;
+            }
+
+            int xMove = Math.abs(startSquare.getX() - endSquare.getX());
+
+            if(xMove == 1){
+                return true;
+            } else if(xMove == 2){
+                if(this.hasMoved == false){
+                    if(this.isWhite()){
+                        if(board.board[startSquare.getX()-1][startSquare.getY()].getPiece() == null){
+                            return true;
+                        }
+                    }else{
+                        if(board.board[startSquare.getX()+1][startSquare.getY()].getPiece() == null){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        // TODO
+        // player is moving pawn and capturing
+
+        return false;
     }
 }
