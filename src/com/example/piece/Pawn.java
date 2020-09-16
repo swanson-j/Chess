@@ -30,10 +30,10 @@ public class Pawn extends Piece {
         if(this.isWhite()){
             if(endSquare.getX() > startSquare.getX()){
                 return false;
-            }else{
-                if(endSquare.getX() < startSquare.getX()){
-                    return false;
-                }
+            }
+        }else{
+            if(endSquare.getX() < startSquare.getX()){
+                return false;
             }
         }
 
