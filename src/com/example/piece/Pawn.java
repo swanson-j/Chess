@@ -26,6 +26,17 @@ public class Pawn extends Piece {
             return false;
         }
 
+        // pawn cannot move backwards
+        if(this.isWhite()){
+            if(endSquare.getX() > startSquare.getX()){
+                return false;
+            }else{
+                if(endSquare.getX() < startSquare.getX()){
+                    return false;
+                }
+            }
+        }
+
         // player is moving pawn up or down the board without capturing
         if(startSquare.getX() != endSquare.getX() && startSquare.getY() == endSquare.getY()){
 
