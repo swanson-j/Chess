@@ -52,21 +52,29 @@ public class Pawn extends Piece {
             } else if(xMove == 2){
                 if(this.hasMoved == false){
                     if(this.isWhite()){
-                        if(board.board[startSquare.getX()-1][startSquare.getY()].getPiece() == null){
+                        if(board.board[startSquare.getX()-1][startSquare.getY()].getPiece() == null && !this.hasMoved()){
                             return true;
                         }
                     }else{
-                        if(board.board[startSquare.getX()+1][startSquare.getY()].getPiece() == null){
+                        if(board.board[startSquare.getX()+1][startSquare.getY()].getPiece() == null && !this.hasMoved()){
                             return true;
                         }
                     }
                 }
             }
+            return false;
         }
 
-        // TODO
-        // player is moving pawn and capturing
-
+        // white player is capturing or black player is capturing
+        if(this.isWhite()){
+            if(endSquare.getX() == startSquare.getX() - 1 && (endSquare.getY() == startSquare.getY() - 1 || endSquare.getY() == startSquare.getY() + 1)){
+                return true;
+            }
+        }else{
+            if(endSquare.getX() == startSquare.getX() + 1 && (endSquare.getY() == startSquare.getY() - 1 || endSquare.getY() == startSquare.getY() + 1)){
+                return true;
+            }
+        }
         return false;
     }
 }
