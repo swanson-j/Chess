@@ -22,8 +22,9 @@ public class Pawn extends Piece {
     public boolean canMove(Board board, Square startSquare, Square endSquare){
 
         // player cannot move to a square that also contains another of the same player's piece
-        if(endSquare.getPiece().isWhite() == this.isWhite()){
-            return false;
+        if(endSquare.getPiece() != null){
+            if(endSquare.getPiece().isWhite() == this.isWhite())
+                return false;
         }
 
         // pawn cannot move backwards
