@@ -43,7 +43,7 @@ public class Rook extends Piece{
             }
         }else if(yMove == 0){
             if(xMove > 0){
-                for(int i = 0; i != xMove; i++){
+                for(int i = 1; i != xMove; i++){
                     if(board.board[startSquare.getX()+i][startSquare.getY()].getPiece() != null){
                         return false;
                     }
