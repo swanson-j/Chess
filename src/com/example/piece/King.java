@@ -21,7 +21,7 @@ public class King extends Piece{
 
     @Override
     public boolean canMove(Board board, Square startSquare, Square endSquare) {
-        // rook cannot capture same colored piece
+        // king cannot capture same colored piece
         if(endSquare.getPiece() != null){
             if(endSquare.getPiece().isWhite() == this.isWhite())
                 return false;
