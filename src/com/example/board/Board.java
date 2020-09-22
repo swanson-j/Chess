@@ -10,6 +10,13 @@ public class Board {
         this.reset();
     }
 
+    public Square getSquare(int x, int y) throws Exception {
+        if(x < 0 || x > 7 || y < 0 || y > 7){
+            throw new Exception("Not a proper square");
+        }
+        return board[x][y];
+    }
+
     public void reset(){
         // set black major pieces
         board[0][0] = new Square(0,0, new Rook(false, false));
